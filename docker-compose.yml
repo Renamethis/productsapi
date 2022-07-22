@@ -12,6 +12,8 @@ services:
     environment:
       - FLASK_APP=server.py
       - DEV_DATABASE_URL=mysql+pymysql://user:secret@localhost:3306/sales
+      - TEST_DATABASE_URL=mysql+pymysql://user:secret@localhost:3306/sales
+      - DATABASE_URL=mysql+pymysql://user:secret@localhost:3306/sales
   celery:
     network_mode: "service:db"
     build: .
@@ -19,6 +21,8 @@ services:
     command: celery -A app.celery worker --loglevel=info
     environment:
       - DEV_DATABASE_URL=mysql+pymysql://user:secret@localhost:3306/sales
+      - TEST_DATABASE_URL=mysql+pymysql://user:secret@localhost:3306/sales
+      - DATABASE_URL=mysql+pymysql://user:secret@localhost:3306/sales
   db:
     container_name: db
     image: mysql:latest

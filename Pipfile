@@ -9,6 +9,8 @@ flask-sqlalchemy = "*"
 redis = "*"
 celery = "*"
 pymysql = "*"
+cryptography = "*"
+pytest = "*"
 
 [dev-packages]
 

@@ -2,6 +2,7 @@ from flask import Flask
 from config import config
 from .extensions import db, celery
 import os
+
 # Flask app factory
 def create_app(config_name):
     app = Flask(__name__)
